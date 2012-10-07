@@ -1,0 +1,57 @@
+html, body {
+	font: 12px/15px sans-serif;
+	background: #d0e4fe;
+	padding: 3px;
+	color: #000;
+	margin: 0;
+	}
+div a {
+	margin-left:0px;	
+}
+a {
+	margin-left:20px;
+}
+a.eka {
+	min-width: 120px;
+}
+a.toka {
+}
+a.otsake{
+	font: 18px/18px sans-serif bold;
+	
+}
+th#paikka {
+	text-align:justify;
+	padding-left:20px;
+	
+}
+object.oma {
+        font: 12px/15px sans-serif;
+        background: #d0e4fe;
+        padding: 3px;
+        color: #000;
+        margin: 0;
+	float:right;
+        }
+body {font: 12px/15px sans-serif;}
+
+
+div { white-space: nowrap;
+	letter-spacing: -0.3em;
+	word-spacing : -0.3em;   
+}
+#chart_div_1 {
+float: left;
+}
+#chart_div_2 {
+
+}
+#switch_status {
+
+}
+
+/* inline hacks for IE6/7 */
+figure { white-space: normal; display: inline-block; *zoom: 1; *display: inline; margin: 0; padding: 0;
+letter-spacing: normal;
+word-spacing : normal;  
+}
