@@ -11,6 +11,11 @@ def lampotila():
     lampotila = l.getlampotila()
     return lampotila
 
+@app.route('/kurja')
+def lampotila():
+    lampotila = l.getlampotila()
+    return lampotila
+
 @app.route('/soile')
 def soileLenkit():
     soile = l.getsoile()

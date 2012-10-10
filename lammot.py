@@ -128,6 +128,7 @@ def weekTemps(room):
 def getlampotila():
     khh_chart_data = weekTemps('khh')
     olohuone_chart_data = weekTemps('olohuone')
+    ulkosauna_chart_data = weekTemps('Ulkosauna')
     html ='''<html>
   <head>
     <script type="text/javascript" src="scripts/jquery.js"></script>
@@ -140,7 +141,7 @@ def getlampotila():
     html += str(khh_chart_data)    
     html += ''');
     var khhoptions = {title: 'khh'};
-    var khhchart = new google.visualization.LineChart(document.getElementById('khh_chart_div'));
+    var khhchart = new google.visualization.AreaChart(document.getElementById('khh_chart_div'));
     khhchart.draw(khhdata, khhoptions);
       }
       function drawChartolohuone() {
@@ -150,19 +151,33 @@ def getlampotila():
 
         
         var olohuoneoptions = {title: 'olohuone'};
-        var olohuonechart = new google.visualization.LineChart(document.getElementById('olohuone_chart_div'));
+        var olohuonechart = new google.visualization.AreaChart(document.getElementById('olohuone_chart_div'));
         olohuonechart.draw(olohuonedata, olohuoneoptions); 
       }
       
+      function drawChartulkosauna() {
+        var ulkosaunadata = google.visualization.arrayToDataTable('''
+    html += str(ulkosauna_chart_data)    
+    html += ''');
+
+        
+        var ulkosaunaoptions = {title: 'Pihasauna'};
+        var ulkosaunachart = new google.visualization.AreaChart(document.getElementById('ulkosauna_chart_div'));
+        Ulkosaunachart.draw(ulkosaunadata, ulkosaunaoptions); 
+      }
+      
+      
       function drawChartAll(){
       drawChartolohuone();
-      drawChartkhh();        
+      drawChartkhh();
+      drawChartulkosauna();
       }
     </script>
   </head>
   <body>
     <div id="khh_chart_div" style="width: 800px; height: 200px;"></div>
     <div id="olohuone_chart_div" style="width: 800px; height: 200px;"></div>
+    <div id="ulkosauna_chart_div" style="width: 800px; height: 200px;"></div>
   </body>
 </html>'''
     return html
